@@ -33,28 +33,28 @@ export class AuthService extends IonicAuth {
   }
 
   private addConfig() {
-    const clientId = '0oak8qpmhim2MmwF20h7';
-    const issuer = 'https://dev-737523.oktapreview.com/oauth2/default';
-    const scopes = 'openid profile offline_access';
+    const clientId = 'bills2u_payer_test_mobile';
+    const issuer = 'https://identity.ringgitpay.co/';
+    const scopes = 'openid profile';
 
-    if (this.platform.is('cordova')) {
+    if (this.platform.is('cordova') || this.platform.is('mobile')) {
       this.authConfig = {
         identity_client: clientId,
         identity_server: issuer,
-        redirect_url: 'com.oktapreview.dev-737523:/callback',
+        redirect_url: 'co.ringgitpay.sample:/callback',
         scopes: scopes,
         usePkce: true,
-        end_session_redirect_url: 'com.oktapreview.dev-737523:/logout',
+        end_session_redirect_url: 'co.ringgitpay.sample:/logout',
       };
     } else {
       this.authConfig = {
         identity_client: clientId,
         identity_server: issuer,
-        redirect_url: 'http://localhost:8100/implicit/callback',
+        redirect_url: 'http://localhost:44312/implicit/callback',
         scopes: scopes,
         usePkce: true,
         response_type: 'code',
-        end_session_redirect_url: 'http://localhost:8100/implicit/logout',
+        end_session_redirect_url: 'http://localhost:44312/implicit/logout',
       };
     }
   }

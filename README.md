@@ -34,12 +34,12 @@ From the **Applications** page, choose **Add Application**. On the Create New Ap
 Give your app a memorable name, and configure it as follows:
  
 * Login redirect URIs: 
-  * `http://localhost:8100/implicit/callback`
+  * `http://localhost:44312/implicit/callback`
   * `com.okta.dev-737523:/callback` (where `dev-737523.okta.com` is your Okta URL)
 * Grant type allowed: **Authorization Code**
 * Click **Done**
 * Click **Edit** and add Logout redirect URIs:
-  * `http://localhost:8100/implicit/logout`
+  * `http://localhost:44312/implicit/logout`
   * `com.okta.dev-737523:/logout`
 * Click **Save**
 
