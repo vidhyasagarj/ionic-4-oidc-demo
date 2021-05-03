@@ -33,11 +33,20 @@ export class AuthService extends IonicAuth {
   }
 
   private addConfig() {
-    const clientId = 'bills2u_payer_test_mobile';
-    const issuer = 'https://identity.ringgitpay.co/';
+
+    // const clientId = 'ionic_test_sample';
+    // const issuer = 'http://192.168.7.35:44317';
+    // const scopes = 'openid profile';
+
+    // const clientId = 'interactive.public';
+    // const issuer = 'https://demo.identityserver.io';
+    // const scopes = 'openid profile';
+
+    const clientId = 'an_ionic_sample';
+    const issuer = 'https://identity.ringgitpay.co';
     const scopes = 'openid profile';
 
-    if (this.platform.is('cordova') || this.platform.is('mobile')) {
+    if (this.platform.is('cordova')) {
       this.authConfig = {
         identity_client: clientId,
         identity_server: issuer,
@@ -50,11 +59,11 @@ export class AuthService extends IonicAuth {
       this.authConfig = {
         identity_client: clientId,
         identity_server: issuer,
-        redirect_url: 'http://localhost:44312/implicit/callback',
+        redirect_url: 'http://localhost:8100/implicit/callback',
         scopes: scopes,
         usePkce: true,
         response_type: 'code',
-        end_session_redirect_url: 'http://localhost:44312/implicit/logout',
+        end_session_redirect_url: 'http://localhost:8100/implicit/logout',
       };
     }
   }
